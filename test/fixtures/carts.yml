@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sum_price: 
+  number_product: 
+  product: one
+  user: one
+
+two:
+  sum_price: 
+  number_product: 
+  product: two
+  user: two

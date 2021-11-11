@@ -1,0 +1,117 @@
+<% content_for :head do %>
+    <!-- title -->
+    <title>Shop | Cart</title>
+    <%= stylesheet_link_tag    'all.min.css' %>
+    <%= stylesheet_link_tag    'bootstrap.min.css' %>
+    <%= stylesheet_link_tag    'owl.carousel.css' %>
+    <%= stylesheet_link_tag    'magnific-popup.css' %>
+    <%= stylesheet_link_tag    'animate.css' %>
+    <%= stylesheet_link_tag    'meanmenu.min.css' %>
+    <%= stylesheet_link_tag    'main.css' %>
+    <%= stylesheet_link_tag    'responsive.css' %>
+<% end %>
+
+
+
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 offset-lg-2 text-center">
+				<div class="breadcrumb-text">
+					<p>Fresh and Organic</p>
+					<h1>Cart</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- cart -->
+<div class="cart-section mt-150 mb-150">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-12">
+				<div class="cart-table-wrap">
+					<table class="cart-table">
+						<thead class="cart-table-head">
+							<tr class="table-head-row">
+								<th class="product-remove"></th>
+								<th class="product-image">Product Image</th>
+								<th class="product-name">Name</th>
+								<th class="product-price">Price</th>
+								<th class="product-quantity">Quantity</th>
+								<th class="product-total">Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% total = 0 %>
+							<% @carts.each do |cart| %>
+								<% total += cart.sum_price %>
+								<tr class="table-body-row">
+									<td class="product-remove">
+                            		<%= link_to cart, method: :delete, data: { confirm: 'Are you sure ?' } do %><i class="far fa-window-close"></i><% end %></td>
+									<td class="product-image"><%= image_tag cart.product.image.url if cart.product.image.url && cart.product.image %></td>
+									<td class="product-name"><%= cart.product.name %></td>
+									<td class="product-price">$<%= cart.product.price %></td>
+									<td class="product-quantity">
+										<%= form_with(model: cart, local: true) do |form| %>
+                							<%= form.number_field :number_product, value: cart.number_product, min: 0 %>
+											<%= form.submit class: "boxed-btn p-2", style: "font-size: 0.9em;" %>
+										<% end %>
+									</td>
+									<td class="product-total">$<%= cart.sum_price %></td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="col-lg-4">
+				<div class="total-section">
+					<table class="total-table">
+						<thead class="total-table-head">
+							<tr class="table-total-row">
+								<th>Total</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="total-data">
+								<td><strong>Subtotal: </strong></td>
+								<td>$<%= total %></td>
+							</tr>
+							<tr class="total-data">
+								<td><strong>Shipping: </strong></td>
+								<td>$50</td>
+							</tr>
+							<tr class="total-data">
+								<td><strong>Total: </strong></td>
+								<td>$<%= total+50 %></td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="cart-buttons">
+						<%= link_to "Check Out", checkout_path, class: 'boxed-btn black' %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end cart -->
+
+
+
+<%= javascript_include_tag 'jquery-1.11.3.min.js' %>
+<%= javascript_include_tag 'bootstrap.min.js' %>
+<%= javascript_include_tag 'jquery.countdown.js' %>
+<%= javascript_include_tag 'jquery.isotope-3.0.6.min.js' %>
+<%= javascript_include_tag 'waypoints.js' %>
+<%= javascript_include_tag 'owl.carousel.min.js' %>
+<%= javascript_include_tag 'jquery.magnific-popup.min.js' %>
+<%= javascript_include_tag 'jquery.meanmenu.min.js' %>
+<%= javascript_include_tag 'sticker.js' %>
+<%= javascript_include_tag 'main.js' %>
