@@ -11,6 +11,6 @@ class NoticeMailer < ApplicationMailer
     @telephone = telephone
     @subject = subject
     @message = message[0]
-    mail to: "shop@gmail.com", subject: @subject
+    mail to: "eeric5756@gmail.com", subject: @subject
   end
 end
