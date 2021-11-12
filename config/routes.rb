@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'home#index', as: "root"
   get '/about', to: 'home#about', as: 'about'
   get '/contact', to: 'home#contact', as: 'contact'
+  post '/send_contact_message', to: 'home#send_contact_message', as: 'send_contact_message'
   get '/news', to: 'home#news', as: 'news'
   resources :products, only: %i[ index show ]
   resources :carts, only: %i[ index update destroy ]
