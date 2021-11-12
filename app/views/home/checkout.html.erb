@@ -113,22 +113,22 @@
 								<% total += cart.sum_price %>
 								<tr>
 									<td><%= cart.product.name %></td>
-									<td>$<%= cart.sum_price %></td>
+									<td><%= cart.sum_price %> FCFA</td>
 								</tr>
 							<% end %>
 						</tbody>
 						<tbody class="checkout-details">
 							<tr>
 								<td>Subtotal</td>
-								<td>$<%= total %></td>
+								<td><%= total %> FCFA</td>
 							</tr>
 							<tr>
 								<td>Shipping</td>
-								<td>$50</td>
+								<td><%= 5000 %> FCFA</td>
 							</tr>
 							<tr>
 								<td>Total</td>
-								<td>$<%= total+50 %></td>
+								<td><%= total+5000 %> FCFA</td>
 							</tr>
 						</tbody>
 					</table>

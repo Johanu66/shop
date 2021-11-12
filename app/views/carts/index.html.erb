@@ -54,14 +54,14 @@
                             		<%= link_to cart, method: :delete, data: { confirm: 'Are you sure ?' } do %><i class="far fa-window-close"></i><% end %></td>
 									<td class="product-image2"><%= image_tag cart.product.image.url if cart.product.image.url && cart.product.image %></td>
 									<td class="product-name"><%= cart.product.name %></td>
-									<td class="product-price">$<%= cart.product.price %></td>
+									<td class="product-price"><%= cart.product.price %> FCFA</td>
 									<td class="product-quantity">
 										<%= form_with(model: cart, local: true) do |form| %>
                 							<%= form.number_field :number_product, value: cart.number_product, min: 0 %>
 											<%= form.submit class: "boxed-btn p-2", style: "font-size: 0.9em;" %>
 										<% end %>
 									</td>
-									<td class="product-total">$<%= cart.sum_price %></td>
+									<td class="product-total"><%= cart.sum_price %> FCFA</td>
 								</tr>
 							<% end %>
 						</tbody>
@@ -81,15 +81,15 @@
 						<tbody>
 							<tr class="total-data">
 								<td><strong>Subtotal: </strong></td>
-								<td>$<%= total %></td>
+								<td><%= total %> FCFA</td>
 							</tr>
 							<tr class="total-data">
 								<td><strong>Shipping: </strong></td>
-								<td>$50</td>
+								<td>5000 FCFA</td>
 							</tr>
 							<tr class="total-data">
 								<td><strong>Total: </strong></td>
-								<td>$<%= total+50 %></td>
+								<td><%= total+5000 %> FCFA</td>
 							</tr>
 						</tbody>
 					</table>

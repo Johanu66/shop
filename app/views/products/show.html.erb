@@ -40,7 +40,7 @@
 			<div class="col-md-7">
 				<div class="single-product-content">
 					<h3>Green apples have polyphenols</h3>
-					<p class="single-product-pricing"><span>Made in benin</span> $<%= @product.price %></p>
+					<p class="single-product-pricing"><span>Made in benin</span><%= @product.price %> FCFA</p>
 					<p><%= @product.description %></p>
 					<div class="single-product-form">
                         <%= link_to add_cart_path(@product), class: "cart-btn" do  %><i class="fas fa-shopping-cart"></i> Add to Cart<% end %>
@@ -71,8 +71,8 @@
                         <div class="product-image m-auto">
                             <%= link_to product_path(product) do %><%= image_tag product.image.url if product.image.url && product.image %><% end %>
                         </div>
-                        <h3><%= product.category.name %></h3>
-                        <p class="product-price"><span><%= product.name %></span> <%= product.price %>$ </p>
+                        <h4><%= product.category.name %></h4>
+                        <p class="product-price"><span><%= product.name %></span> <%= product.price %> FCFA</p>
                         <%= link_to add_cart_path(product_id: product.id), class: "cart-btn" do  %><i class="fas fa-shopping-cart"></i> Add to Cart<% end %>
                     </div>
                 </div>

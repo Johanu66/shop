@@ -22,7 +22,7 @@ class HomeController < ApplicationController
             @total_price += cart.sum_price
             @qt_product = cart.number_product
         end
-        @total_price += 50
+        @total_price += 5000
         @order = Order.create(total_price: @total_price, qt_product: @qt_product, user: current_user, status: "Progress")
         @carts.each do |cart|
             OrdersProduct.create(order: @order, product: cart.product)
