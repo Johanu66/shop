@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get '/cart/:product_id', to: 'carts#create', as: 'add_cart'
   get '/checkout', to: 'home#checkout', as: 'checkout'
   put '/checkout/:id', to: 'home#checkout_final', as: 'checkout_final'
+  get '/filter/:category', to: 'products#filter', as: 'filter'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

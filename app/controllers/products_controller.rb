@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
     end
     def show
         @product = Product.find(params[:id])
-        @products = Product.all.limit(3)
+        @products = Product.where(category_id: @product.category).limit(3)
+    end
+    def filter
+        @products = Product.where(category_id: params[:category])
+        @categories = Category.all
+        render :index
     end
 end
