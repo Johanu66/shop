@@ -40,15 +40,15 @@
                 <div class="contact-form">
                     <%= form_tag '/send_contact_message' do %>
                         <p>
-                            <%= text_field_tag "name", nil, autocomplete: "name", placeholder: "Name", id: 'name', requied: 'required' %>
-                            <%= email_field_tag "email", nil, autocomplete: "email", placeholder: "Email", id: 'email', requied: 'required' %>
+                            <%= text_field_tag "name", nil, autocomplete: "name", placeholder: "Name", id: 'name', required: 'required' %>
+                            <%= email_field_tag "email", nil, autocomplete: "email", placeholder: "Email", id: 'email', required: 'required' %>
                         </p>
                         <p>
-                            <%= text_field_tag "telephone", nil, autocomplete: "tel", placeholder: "Phone", requied: 'required' %>
+                            <%= text_field_tag "telephone", nil, autocomplete: "tel", placeholder: "Phone", required: 'required' %>
                             <%= text_field_tag "subject", nil, placeholder: "Subject", requied: 'required' %>
                         </p>
                         <p>
-                            <%= text_area "message", nil, autocomplete: "message", placeholder: "Message", id: "message", cols: "30", rows: "10", requied: 'required' %>
+                            <%= text_area "message", nil, autocomplete: "message", placeholder: "Message", id: "message", cols: "30", rows: "10", required: 'required' %>
                         </p>
                         <%= submit_tag "Submit", class: "px-5 py-2" %>
                     <% end %>
