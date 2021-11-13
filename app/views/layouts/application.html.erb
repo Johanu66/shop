@@ -52,24 +52,24 @@
               <!-- menu start -->
               <nav class="main-menu">
                 <ul>
-                  <li class="current-list-item"><%= link_to "Home", root_path %></li>
-                  <li class="sous-menu"><%= link_to "Shop", products_path %>
+                  <li class="current-list-item"><%= link_to "Accueil", root_path %></li>
+                  <li class="sous-menu"><%= link_to "Boutique", products_path %>
                     <ul class="sub-menu">
-                      <li><%= link_to "Shop", products_path %></li>
-                      <li><%= link_to "Check Out", checkout_path %></li>
-                      <li><%= link_to "Cart", carts_path %></li>
+                      <li><%= link_to "Boutique", products_path %></li>
+                      <li><%= link_to "Payer", checkout_path %></li>
+                      <li><%= link_to "Panier", carts_path %></li>
                     </ul>
                   </li>
                   <li class="sous-menu"><%= link_to "Contact", contact_path %></li>
-                  <li class="sous-menu"><%= link_to "About", about_path %></li>
+                  <li class="sous-menu"><%= link_to "A propos", about_path %></li>
                   <% if user_signed_in? %>
                       <li class="sous-menu">
                           <% if current_user.admin %><%= link_to "Admin", rails_admin_path %><% end %>
                       </li>
-                      <li class="sous-menu"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+                      <li class="sous-menu"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
                   <% else %>
-                      <li class="sous-menu"><%= link_to "Log in", new_user_session_path %></li>
-                      <li class="sous-menu"><%= link_to "Sign in", new_user_registration_path %></li>
+                      <li class="sous-menu"><%= link_to "Se  connecter", new_user_session_path %></li>
+                      <li class="sous-menu"><%= link_to "S'inscrire", new_user_registration_path %></li>
                   <% end %>
                   <li>
                     <div class="header-icons">
@@ -145,17 +145,17 @@
         <div class="row">
           <div class="col-lg-3 col-md-6">
             <div class="footer-box about-widget">
-              <h2 class="widget-title">About us</h2>
-              <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+              <h2 class="widget-title">A propos de nous</h2>
+              <p>Nous sommes ACO, Nyiko miton <br> Une société de promotion des valeurs béninoises à travers les tenues vestimentaires ! Nous proposons des vetements exceptionnellement beninois , nous organisons également des formations pour les béninois passionnés de stylisme.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="footer-box get-in-touch">
-              <h2 class="widget-title">Get in Touch</h2>
+              <h2 class="widget-title">Contacts</h2>
               <ul>
-                <li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-                <li>support@fruitkha.com</li>
-                <li>+00 111 222 3333</li>
+                <li>Site Principal : CALAVI , Deuxieme grande rue apres le campus , bp 010101</li>
+                <li>support@aco.com</li>
+                <li>+229 01 01 01 01 /+229 12 01 01 01</li>
               </ul>
             </div>
           </div>
@@ -163,17 +163,17 @@
             <div class="footer-box pages">
               <h2 class="widget-title">Pages</h2>
               <ul>
-                <li><%= link_to "Home", root_path %></li>
-                <li><%= link_to "About", about_path %></li>
-                <li><%= link_to "Shop", products_path %></li>
+                <li><%= link_to "Accueil", root_path %></li>
+                <li><%= link_to "A propos", about_path %></li>
+                <li><%= link_to "Boutique", products_path %></li>
                 <li><%= link_to "Contact", contact_path %></li>
               </ul>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="footer-box subscribe">
-              <h2 class="widget-title">Subscribe</h2>
-              <p>Subscribe to our mailing list to get the latest updates.</p>
+              <h2 class="widget-title">S’abonner</h2>
+              <p>Abonnez vous a nos news letters pour etre notifiés sur nos mises à jour.</p>
               <form action="index.html">
                 <input type="email" placeholder="Email">
                 <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -190,7 +190,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-12">
-            <p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.</p>
+            <p>Copyrights &copy; 2010 – <a href="https://imransdesign.com/"> ACO , NYIKO MITON </a>, Tous droits réservés.</p>
           </div>
           <div class="col-lg-6 text-right col-md-12">
             <div class="social-icons">
