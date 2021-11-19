@@ -22,6 +22,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
+    <%= javascript_include_tag 'sweetalert.min.js' %>
     <%= stylesheet_link_tag    'monStyle.css' %>
 
     <%= yield :head %>
@@ -110,6 +111,15 @@
       </div>
     </div>
     <!-- end search area -->
+
+
+    <% if notice %>
+      <script>swal("SUCCESS", "<%= notice %>".split("&#39;").join("'"),"success")</script>
+    <% end %>
+    <% if alert %>
+      <script>swal("WARNING", "<%= alert %>".split("&#39;").join("'"), "warning")</script>
+    <% end %>
+
 
     <%= yield %>
 

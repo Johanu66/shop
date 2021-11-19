@@ -27,6 +27,7 @@ module Shop
     config.assets.precompile += %w( owl.carousel.min.js )
     config.assets.precompile += %w( sticker.js )
     config.assets.precompile += %w( waypoints.js )
+    config.assets.precompile += %w( sweetalert.min.js )
     config.assets.precompile += %w( all.min.css )
     config.assets.precompile += %w( animate.css )
     config.assets.precompile += %w( bootstrap-grid.css )
