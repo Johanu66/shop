@@ -20,7 +20,7 @@
 			<div class="col-lg-8 offset-lg-2 text-center">
 				<div class="breadcrumb-text">
 					<p>La meilleure qualité</p>
-					<h1>Boutine</h1>
+					<h1>Boutique</h1>
 				</div>
 			</div>
 		</div>
@@ -36,9 +36,18 @@
 			<div class="col-md-12">
 				<div class="product-filters">
 					<ul>
-						<li class="active" data-filter="*">All</li>
+						<%= link_to products_path do %><li class="<% if !@active %>active<% end %>">All</li><% end %>
                         <% @categories.each do |category| %>
-                            <%= link_to filter_path(category) do %><li data-filter=".<%= category.name %>"><%= category.name %></li><% end %>
+                            <%= link_to filter_path(category) do %>
+								<% if !category.category %>
+									<li class="<% if @active==category.id %>active<% end %>" data-filter=".<%= category.name %>">
+										<%= category.name %>
+									</li>
+								<% end %>
+							<% end %>
+							<% category.categories.each do |sub_category| %>
+								<%= link_to filter_path(sub_category) do %><li class="<% if @active==sub_category.id %>active<% end %>" data-filter=".<%= sub_category.name %>"><%= sub_category.name %></li><% end %>
+							<% end %>
                         <% end %>
 					</ul>
 				</div>

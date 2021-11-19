@@ -2,8 +2,8 @@
 
 
 $(function(){
-    $('#menu li a').filter(function(){return this.href==location.href}).parent().addClass('current-list-item').siblings().removeClass('current-list-item')
-    $('#menu li a').click(function(){
+    $('#menu li .lien').filter(function(){return this.href==location.href}).parent().addClass('current-list-item').siblings().removeClass('current-list-item')
+    $('#menu li .lien').click(function(){
         $(this).parent().addClass('current-list-item').siblings().removeClass('current-list-item')    
     })
 })

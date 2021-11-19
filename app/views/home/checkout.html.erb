@@ -47,10 +47,10 @@
 							<div class="card-body">
 							<div class="billing-address-form">
 								<%= form_for(current_user, url: checkout_final_path(current_user), html: { method: :put }) do |f| %>
-									<p><%= f.text_field :name, autocomplete: "name", placeholder: "Name" %></p>
-									<p><%= f.email_field :email, autocomplete: "email", placeholder: "Email" %></p>
-									<p><%= f.text_field :address, autocomplete: "address", placeholder: "Address" %></p>
-									<p><%= f.text_field :telephone, autocomplete: "tel", placeholder: "Phone" %></p>
+									<p><%= f.text_field :name, autocomplete: "name", placeholder: "Name", required: "required" %></p>
+									<p><%= f.email_field :email, autocomplete: "email", placeholder: "Email", required: "required" %></p>
+									<p><%= f.text_field :address, autocomplete: "address", placeholder: "Address", required: "required" %></p>
+									<p><%= f.text_field :telephone, autocomplete: "tel", placeholder: "Phone", required: "required" %></p>
 									<%= f.submit "Submit", class: 'd-none', id: 'submit' %>
 								<% end %>
 							</div>

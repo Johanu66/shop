@@ -23,6 +23,7 @@ module Shop
     config.assets.precompile += %w( jquery.magnific-popup.min.js )
     config.assets.precompile += %w( jquery.meanmenu.min.js )
     config.assets.precompile += %w( main.js )
+    config.assets.precompile += %w( monScript.js )
     config.assets.precompile += %w( owl.carousel.min.js )
     config.assets.precompile += %w( sticker.js )
     config.assets.precompile += %w( waypoints.js )
@@ -39,6 +40,7 @@ module Shop
     config.assets.precompile += %w( meanmenu.min.css )
     config.assets.precompile += %w( owl.carousel.css )
     config.assets.precompile += %w( responsive.css )
+    config.assets.precompile += %w( monStyle.css )
 
 
     # Settings in config/environments/* take precedence over those specified here.

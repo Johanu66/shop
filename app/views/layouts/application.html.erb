@@ -7,7 +7,7 @@
     <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="img/logo.png">
 
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -21,6 +21,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <%= stylesheet_link_tag    'monStyle.css' %>
 
     <%= yield :head %>
   </head>
@@ -44,32 +46,32 @@
               <!-- logo -->
               <div class="site-logo">
                 <a href="index.html">
-                  <img src="img/logo.png" alt="">
-                </a>
+                <%= link_to root_path do %>
+                  <img src="img/logo.png" style="width: 50px;" alt="">
+                <% end %>
               </div>
               <!-- logo -->
 
               <!-- menu start -->
               <nav class="main-menu">
-                <ul>
-                  <li class="current-list-item"><%= link_to "Accueil", root_path %></li>
-                  <li class="sous-menu"><%= link_to "Boutique", products_path %>
+                <ul id="menu">
+                  <li class="current-list-item sous-menu"><%= link_to "Accueil", root_path, class: "lien" %></li>
+                  <li class="sous-menu"><%= link_to "Boutique", products_path, class: "lien" %>
                     <ul class="sub-menu">
-                      <li><%= link_to "Boutique", products_path %></li>
-                      <li><%= link_to "Payer", checkout_path %></li>
-                      <li><%= link_to "Panier", carts_path %></li>
+                      <li><%= link_to "Boutique", products_path, class: "lien" %></li>
+                      <li><%= link_to "Panier", carts_path, class: "lien" %></li>
                     </ul>
                   </li>
-                  <li class="sous-menu"><%= link_to "Contact", contact_path %></li>
-                  <li class="sous-menu"><%= link_to "A propos", about_path %></li>
+                  <li class="sous-menu"><%= link_to "Contact", contact_path, class: "lien" %></li>
+                  <li class="sous-menu"><%= link_to "A propos", about_path, class: "lien" %></li>
                   <% if user_signed_in? %>
                       <li class="sous-menu">
-                          <% if current_user.admin %><%= link_to "Admin", rails_admin_path %><% end %>
+                          <% if current_user.admin %><%= link_to "Admin", rails_admin_path, class: "lien" %><% end %>
                       </li>
-                      <li class="sous-menu"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
+                      <li class="sous-menu"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "lien" %></li>
                   <% else %>
-                      <li class="sous-menu"><%= link_to "Se  connecter", new_user_session_path %></li>
-                      <li class="sous-menu"><%= link_to "S'inscrire", new_user_registration_path %></li>
+                      <li class="sous-menu"><%= link_to "Se  connecter", new_user_session_path, class: "lien" %></li>
+                      <li class="sous-menu"><%= link_to "S'inscrire", new_user_registration_path, class: "lien" %></li>
                   <% end %>
                   <li>
                     <div class="header-icons">
@@ -110,34 +112,6 @@
 
     <%= yield %>
 
-
-    <!-- logo carousel -->
-    <div class="logo-carousel-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="logo-carousel-inner">
-                        <div class="single-logo-item">
-                            <img src="img/company-logos/1.png" alt="">
-                        </div>
-                        <div class="single-logo-item">
-                            <img src="img/company-logos/2.png" alt="">
-                        </div>
-                        <div class="single-logo-item">
-                            <img src="img/company-logos/3.png" alt="">
-                        </div>
-                        <div class="single-logo-item">
-                            <img src="img/company-logos/4.png" alt="">
-                        </div>
-                        <div class="single-logo-item">
-                            <img src="img/company-logos/5.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end logo carousel -->
 
     <!-- footer -->
     <div class="footer-area">
@@ -206,5 +180,7 @@
         </div>
       </div>
     </div>
+    
+    <%= javascript_include_tag 'monScript.js' %>
   </body>
 </html>

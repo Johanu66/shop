@@ -57,7 +57,7 @@
 									<td class="product-price"><%= cart.product.price %> FCFA</td>
 									<td class="product-quantity">
 										<%= form_with(model: cart, local: true) do |form| %>
-                							<%= form.number_field :number_product, value: cart.number_product, min: 0 %>
+                							<%= form.number_field :number_product, value: cart.number_product, min: 1 %>
 											<%= form.submit class: "boxed-btn p-2", style: "font-size: 0.9em;" %>
 										<% end %>
 									</td>
@@ -94,7 +94,9 @@
 						</tbody>
 					</table>
 					<div class="cart-buttons">
-						<%= link_to "Check Out", checkout_path, class: 'boxed-btn black' %>
+						<% if @carts.length > 0 %>
+							<%= link_to "Check Out", checkout_path, class: 'boxed-btn black' %>
+						<% end %>
 					</div>
 				</div>
 			</div>
