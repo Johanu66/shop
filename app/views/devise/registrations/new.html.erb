@@ -18,8 +18,8 @@
     <div class="row">
       <div class="col-lg-8 offset-lg-2 text-center">
         <div class="breadcrumb-text">
-          <p>Get 24/7 support</p>
-          <h2  class="text-white">Create your account</h2>
+          <p>Bénéficiez d'une assistance 24h/24 et 7j/7</p>
+          <h2  class="text-white">Créez votre compte</h2>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
     <div class="row">
       <div class="col-lg-12 mb-5 mb-lg-0 col-12">
         <div class="form-title text-center">
-					<h2>You must to register now to create your acount</h2>
+					<h2>Vous devez vous enregistrer maintenant pour créer votre compte.</h2>
           <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p> -->
         </div>
         <div id="form_status"></div>
@@ -50,7 +50,7 @@
             <div class="field form-group m-4">
               <%= f.label :password %>
               <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <em>(<%= @minimum_password_length %> caractères minimum)</em>
               <% end %><br />
               <%= f.password_field :password, autocomplete: "new-password", class: "form-control", id: "password" %>
             </div>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="actions form-group text-center m-4">
-              <%= f.submit "Sign up", style: "position:relative;", class: "px-5 py-2" %>
+              <%= f.submit "S'inscrire", style: "position:relative;", class: "px-5 py-2" %>
             </div>
             <div class="text-center m-4">
               <%= render "devise/shared/links" %>
