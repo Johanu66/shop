@@ -2904,3 +2904,19 @@ table.order-details tbody td {
   vertical-align: middle;
   width: 100%;
 }
+
+
+/* ***********************************************style for styliste section********************************** */
+
+.team-bg-1-styliste {
+  background-image: url(../img/stylist_benin_photo/pepita_benin_2.jpg);
+}
+
+.team-bg-2-styliste {
+  background-image: url(../img/stylist_benin_photo/felicien_castamen_benin.png);
+}
+
+.team-bg-3-styliste {
+  background-image: url(../img/stylist_benin_photo/amoussou_benin.jpg);
+}
+/* *******************************************end style style section********************************************* */
