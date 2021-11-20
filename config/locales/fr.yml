@@ -10,25 +10,24 @@ fr:
           has_many: Vous ne pouvez pas supprimer l'enregistrement parce que les %{record}
             dépendants existent
     models:
-      administrator: Administrateur
-      announcement: Annonce
-      channel: Chaîne
-      comment: Commentaire
-      like: Appréciation
-      subscription: Abonnement
+      product: Produit
+      cart: Panier
+      category: Catégorie
+      order: Commande
+      orders_product: Produits liés aux coommandes
       user: Utilisateur
 
     attributes:
-      administrator:
+      product:
         announcements: Annonces
         channel: :activerecord.models.channel
         user: :activerecord.models.user
 
-      announcement:
+      cart:
         content: Contenu
         image: Image
 
-      channel:
+      category:
         administrators: Administrateurs
         announcements: Annonces
         description: Description
@@ -38,17 +37,13 @@ fr:
         title: Titre
         user: :activerecord.models.user
 
-      comment:
+      order:
         announcement: :activerecord.models.announcement
         content: Teneur
         user: :activerecord.models.user
 
-      like:
+      orders_product:
         announcement: :activerecord.models.announcement
-        user: :activerecord.models.user
-
-      subscription:
-        channel: :activerecord.models.channel
         user: :activerecord.models.user
 
       user:

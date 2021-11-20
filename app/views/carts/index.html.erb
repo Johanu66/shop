@@ -19,8 +19,8 @@
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 text-center">
 				<div class="breadcrumb-text">
-					<p>Fresh and Organic</p>
-					<h1>Cart</h1>
+					<p>Beau et exceptionnel</p>
+					<h1>Panier</h1>
 				</div>
 			</div>
 		</div>
@@ -38,10 +38,10 @@
 						<thead class="cart-table-head">
 							<tr class="table-head-row">
 								<th class="product-remove"></th>
-								<th class="product-image2">Product Image</th>
-								<th class="product-name">Name</th>
-								<th class="product-price">Price</th>
-								<th class="product-quantity">Quantity</th>
+								<th class="product-image2">Image du produit</th>
+								<th class="product-name">Nom</th>
+								<th class="product-price">Prix</th>
+								<th class="product-quantity">Quantité</th>
 								<th class="product-total">Total</th>
 							</tr>
 						</thead>
@@ -58,7 +58,7 @@
 									<td class="product-quantity">
 										<%= form_with(model: cart, local: true) do |form| %>
                 							<%= form.number_field :number_product, value: cart.number_product, min: 1 %>
-											<%= form.submit class: "boxed-btn p-2", style: "font-size: 0.9em;" %>
+											<%= form.submit "Mettre a jour", class: "boxed-btn p-2", style: "font-size: 0.9em;" %>
 										<% end %>
 									</td>
 									<td class="product-total"><%= cart.sum_price %> FCFA</td>
@@ -75,16 +75,16 @@
 						<thead class="total-table-head">
 							<tr class="table-total-row">
 								<th>Total</th>
-								<th>Price</th>
+								<th>Prix</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr class="total-data">
-								<td><strong>Subtotal: </strong></td>
+								<td><strong>Sous-Total: </strong></td>
 								<td><%= total %> FCFA</td>
 							</tr>
 							<tr class="total-data">
-								<td><strong>Shipping: </strong></td>
+								<td><strong>Montant d'expédition: </strong></td>
 								<td>1000 FCFA</td>
 							</tr>
 							<tr class="total-data">
@@ -95,7 +95,7 @@
 					</table>
 					<div class="cart-buttons">
 						<% if @carts.length > 0 %>
-							<%= link_to "Check Out", checkout_path, class: 'boxed-btn black' %>
+							<%= link_to "Lancer la commande", checkout_path, class: 'boxed-btn black' %>
 						<% end %>
 					</div>
 				</div>
