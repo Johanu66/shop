@@ -75,3 +75,5 @@ gem 'cancancan'
 gem 'faker'
 
 gem 'dotenv-rails'
+
+gem 'cloudinary'
