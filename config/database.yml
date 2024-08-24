@@ -16,17 +16,14 @@
 #
 default: &default
   adapter: mysql2
-  encoding: utf8mb4
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root # Remplacez par votre utilisateur MySQL
-  password: '' # Vous pouvez stocker le mot de passe dans une variable d'environnement
-  socket: /var/run/mysqld/mysqld.sock # Remplacez si nécessaire
+  encoding: utf8
+  username: tqffjfwm_atchor_store # Remplacez par votre utilisateur MySQL
+  password: "VN^N0@2@+A7&V@uy7V" # Vous pouvez stocker le mot de passe dans une variable d'environnement
+  socket: /var/lib/mysql/mysql.sock # Remplacez si nécessaire
 
 development:
   <<: *default
-  database: shop_development
+  database: tqffjfwm_atchor_store
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -83,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: shop_production
-  username: shop
-  password: <%= ENV['SHOP_DATABASE_PASSWORD'] %>
+  database: tqffjfwm_atchor_store
+  username: tqffjfwm_atchor_store
+  password: "VN^N0@2@+A7&V@uy7V"
+  

@@ -1,0 +1,8 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/tqffjfwm/atchor-store"
+PassengerBaseURI "/"
+PassengerRuby "/home/tqffjfwm/rubyvenv/atchor-store/2.7/bin/ruby"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+
+PassengerFriendlyErrorPages off
+PassengerAppEnv development
